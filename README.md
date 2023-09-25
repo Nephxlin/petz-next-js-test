@@ -17,6 +17,11 @@ npm run dev
 yarn dev
 ```
 
+## Todo
+- Melhorar alguns testes
+- Minificar styled-component
+- Adicionar funcionalidade do calculo de 3% de acrescimo no valor referente a "geração do pokemon"
+
 ## Objetivo
 
 Desenvolver um web app em Typescript, a partir deste projeto nextjs (clone o repositório e desenvolva em cima dele), que implemente o design descrito na próxima seção.
