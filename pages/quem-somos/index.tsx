@@ -1,8 +1,9 @@
+import styled from "styled-components";
 import Head from 'next/head'
 import BasicTemplate from '../../src/_UI/components/Template/BasicTemplate'
 import Section from '../../src/_UI/components/Organisms/Section'
 import Container from '../../src/_UI/components/Layout/Container'
-import styled from "styled-components";
+
 
 export const Content = styled.div`
   display: flex;

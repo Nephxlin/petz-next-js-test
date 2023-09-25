@@ -1,9 +1,7 @@
-import { useState } from "react";
 import Head from "next/head";
 import BasicTemplate from "../../src/_UI/components/Template/BasicTemplate";
 import Section from "../../src/_UI/components/Organisms/Section";
 import ScheduleForm from "../../src/_UI/components/Molecules/ScheduleForm";
-import WarningContainer from "../../src/_UI/components/Organisms/WarningContainer";
 import { useRouter } from "next/router";
 import slugify from "slugify";
 import formatData from "../../src/utils/formatDate";

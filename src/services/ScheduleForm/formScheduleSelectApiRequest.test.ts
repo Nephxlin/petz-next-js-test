@@ -9,8 +9,8 @@ describe('FormScheduleSelectApiRequest', () => {
 
     expect(result).toEqual({
       baseService: 'local',
-      url: '/scheduling/time',
-      method: 'POST',
+      url: '/scheduling/date',
+      method: 'GET',
       data: {
         date: '',
       },
@@ -26,9 +26,10 @@ describe('FormScheduleSelectApiRequest', () => {
     expect(result).toEqual({
       baseService: 'local',
       url: '/scheduling/time',
+      extendPath: undefined,
       method: 'POST',
       data: {
-        date: '',
+        date:{}
       },
     });
   });
