@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 interface ISelectWrapperProps{
-  row?: boolean;
+  direction?: 'column' | 'row';
 }
 
 export const SelectWrapper = styled.div<ISelectWrapperProps>`
   display: flex;
   flex-direction: column;
-  ${({row}) => row && `
+  ${({direction}) => direction === 'row' && `
     width: 100%;
     flex-direction: row;
     align-items: center;
@@ -19,7 +19,7 @@ export const SelectStyled = styled.select<ISelectWrapperProps>`
   padding: 13px 14px;
   border: 1px solid #D5D5D5;
   border-radius:8px;
-  width: ${({row}) => row ?`100%`: '265px'};
+  width: ${({direction}) => direction === 'row' ?`100%`: '265px'};
 `
 
 export const Label = styled.label<ISelectWrapperProps>`
@@ -28,9 +28,10 @@ export const Label = styled.label<ISelectWrapperProps>`
   font-weight: 700;
   padding: 8px 0px;
   white-space: nowrap;
-  padding-right: ${({row}) => row && '36px'};
+  padding-right: ${({direction}) => direction === 'row' && '36px'};
 `
 
 export const Error = styled.span`
   color: red;
+  font-size: 8px;
 `

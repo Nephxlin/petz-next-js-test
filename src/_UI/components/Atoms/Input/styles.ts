@@ -6,7 +6,7 @@ export const InputWrapper = styled.div`
   flex-direction: column;
 `
 
-export const Input = styled.input`
+export const InputStyled = styled.input`
   padding: 13px 14px;
   border: 1px solid #D5D5D5;
   width:265px;
@@ -21,4 +21,5 @@ export const Label = styled.label`
 
 export const Error = styled.span`
   color: red;
+  font-size: 8px;
 `

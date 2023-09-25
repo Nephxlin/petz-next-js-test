@@ -1,14 +1,12 @@
 import * as S from './styles'
 import Button from '../../Atoms/Button'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
-
-const Logo = dynamic(() => import("../../Atoms/Logo"))
+import Logo from '../../Atoms/Logo'
 
 const Header = () => {
   return (
     <S.Header>
-      <Logo />
+      <Logo data-testid='logo-container' />
       <S.Nav>
         <S.NavList>
           <li>
@@ -18,7 +16,7 @@ const Header = () => {
           </li>
           <li>
             <Link href='/agendar-consulta'>
-              <Button $stylePattern='primary' >
+              <Button stylepattern='primary' >
                 Agendar Consulta
               </Button>
             </Link>

@@ -10,7 +10,7 @@ const stylePatternProps = {
 
 export const ContainerStyled = styled.div<IContainerProps>`
   width: 100%;
-  ${({$stylePattern}) => $stylePattern === 'primary' && stylePatternProps.primary};
+  ${({stylepattern}) => stylepattern === 'primary' && stylePatternProps.primary};
 `
 
 export const Container = styled.div`

@@ -7,10 +7,10 @@ interface ICustomInputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 
 const Input = (props: ICustomInputProps) => {
   return (
-    <S.InputWrapper>
-      {props.label && <S.Label>{props.label}</S.Label>}
-      <S.Input {...props} />
-      {props.error && <S.Error>{props.error}</S.Error>}
+    <S.InputWrapper data-testid='input-styled-component'>
+      {props.label && <S.Label htmlFor={props.id}>{props.label}</S.Label>}
+      <S.InputStyled {...props} />
+      {props.error && <S.Error data-testid='error-message'>{props.error}</S.Error>}
     </S.InputWrapper>
   )
 }

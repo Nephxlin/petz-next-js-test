@@ -31,3 +31,22 @@ export const SIZES: ISizesProps = {
   p24: '24',
   p32: '32',
 }
+
+
+export const Theme = {
+  color: {
+    white: '#fff',
+    darkGray: '#1D1D1D',
+    lightGray: '#F2F2F2',
+    black: '#000',
+    primary: '#E40F0F',
+  },
+  font: {
+    p: '8px',
+    p12: '12px',
+    p14: '14px',
+    p18: '18px',
+    p24: '24px',
+    p32: '32px',
+  },
+};

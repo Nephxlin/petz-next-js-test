@@ -1,12 +1,14 @@
-import Head from "next/head"
-import BasicTemplate from "../../src/_UI/components/Template/BasicTemplate"
-import Section from "../../src/_UI/components/Organisms/Section"
-import ScheduleForm from "../../src/_UI/components/Organisms/ScheduleForm"
+import Head from "next/head";
+import BasicTemplate from "../../src/_UI/components/Template/BasicTemplate";
+import Section from "../../src/_UI/components/Organisms/Section";
+import ScheduleForm from "../../src/_UI/components/Molecules/ScheduleForm";
 
+interface IProps {
+  weekDay: any;
+  test: any;
+}
 
-
-const AgendarConsulta = () => {
-
+export default function AgendarConsulta() {
   return (
     <>
       <Head>
@@ -17,14 +19,12 @@ const AgendarConsulta = () => {
       </Head>
       <BasicTemplate>
         <Section
-          $stylePattern='primary'
+          stylepattern='primary'
           title='Agendar Consulta'
           subTitle='Recupere seus pokémons em 5 segundos'
         />
         <ScheduleForm />
       </BasicTemplate>
     </>
-  )
+  );
 }
-
-export default AgendarConsulta

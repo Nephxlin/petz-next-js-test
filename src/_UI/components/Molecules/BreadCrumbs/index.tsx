@@ -14,20 +14,18 @@ const Breadcrumbs = () => {
   });
 
   return (
-    <S.BreadCrumbsContainer>
-      <S.BreadCrumbsList>
-        <Link href='/'>
-          <S.CrumbHome>
-            Home
-          </S.CrumbHome>
-        </Link>
-        {breadcrumbs.map((breadcrumb, index) => (
-          <S.CrumbLink key={index}>
-            <p>{breadcrumb.label}</p>
-          </S.CrumbLink>
-        ))}
-      </S.BreadCrumbsList>
-    </S.BreadCrumbsContainer>
+    <S.BreadCrumbsList data-testid='breadcrumbs-list'>
+      <Link href='/'>
+        <S.CrumbHome>
+          Home
+        </S.CrumbHome>
+      </Link>
+      {breadcrumbs.map((breadcrumb, index) => (
+        <S.CrumbLink data-testid="breadcrumbs-items" key={index}>
+          {breadcrumb.label}
+        </S.CrumbLink>
+      ))}
+    </S.BreadCrumbsList>
   );
 };
 

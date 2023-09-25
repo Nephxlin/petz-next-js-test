@@ -1,10 +1,23 @@
 import Head from 'next/head'
-
-import * as S from './styles'
 import BasicTemplate from '../../src/_UI/components/Template/BasicTemplate'
 import Section from '../../src/_UI/components/Organisms/Section'
 import Container from '../../src/_UI/components/Layout/Container'
+import styled from "styled-components";
 
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`
+
+export const ParagraphSession = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 408px;
+`
 
 export default function QuemSomos() {
   return (
@@ -17,13 +30,13 @@ export default function QuemSomos() {
       </Head>
       <BasicTemplate>
         <Section
-          $stylePattern='primary'
+          stylepattern='primary'
           title='Quem Somos'
           subTitle='A maior rede de tratamento pokémon.'
         />
-        <Container $stylePattern='white'>
-          <S.Content>
-            <S.ParagraphSession>
+        <Container stylepattern='white'>
+          <Content>
+            <ParagraphSession>
               <p>
                 <strong>O Centro Pokémon</strong>
                 <br />
@@ -53,8 +66,8 @@ export default function QuemSomos() {
                 Fusce vitae ex pharetra, gravida turpis in, pretium dui. Nulla fringilla odio sed dolor varius cursus vitae at lectus. Aenean fermentum ligula sed tincidunt venenatis. Mauris quis ligula lacus. Integer viverra condimentum orci, quis consequat odio imperdiet ut. Praesent maximus diam porttitor est sodales, id posuere lacus porta. Sed vel mauris vel mauris fringilla porttitor vitae eget neque. Vivamus eget dictum dolor. Nullam in ullamcorper purus, vel pulvinar ex. Cras posuere feugiat auctor. Mauris sodales dolor quis rhoncus hendrerit.
                 <br />
               </p>
-            </S.ParagraphSession>
-          </S.Content>
+            </ParagraphSession>
+          </Content>
         </Container>
       </BasicTemplate>
     </>

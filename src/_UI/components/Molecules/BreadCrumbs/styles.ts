@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-export const BreadCrumbsContainer = styled.nav`
-  display: flex;
-  flex-direction: row;
-`
-
 export const BreadCrumbsList = styled.ul`
   display: flex;
   align-items: center;
@@ -36,7 +31,7 @@ export const CrumbLink = styled.li`
   gap:4px;
   text-decoration: none;
 
-  ::before{
+  &:before{
     content: ' > ';
     font-weight: 300;
   }

@@ -2,11 +2,15 @@ import { IButtonProps } from './IButtonProps'
 import * as S from './styles'
 
 
-const Button = ({ children, $stylePattern = 'primary' }: IButtonProps) => {
+const Button = ({ children, stylepattern = 'primary', ...props }: IButtonProps) => {
   return (
-    <S.Button $stylePattern={$stylePattern}>
+    <S.ButtonStyled
+      {...props}
+      stylepattern={stylepattern}
+      data-testid='button-styled-component'
+    >
       {children}
-    </S.Button>
+    </S.ButtonStyled >
   )
 }
 

@@ -1,18 +1,19 @@
 import { Inter } from '@next/font/google'
 import type { AppProps } from 'next/app'
 import { LogoProvider } from '../src/_UI/context/LogoContext/logoProvider'
-import GlobalStyle from '../src/_UI/styles/GlobalStyles'
+import GlobalStyle from '../src/configs/styles/GlobalStyles'
+import { ThemeProvider } from 'styled-components'
+import { Theme } from '../src/configs/styles/config'
 
 const inter = Inter({ subsets: ['latin'], preload: true })
 
 export default function App({ Component, pageProps }: AppProps) {
-  console.log(inter)
   return (
-    <LogoProvider>
-      <GlobalStyle
-        fontFamily={inter.style.fontFamily}
-      />
-      <Component {...pageProps} className={inter.className} />
-    </LogoProvider>
+    <ThemeProvider theme={Theme}>
+      <LogoProvider>
+        <GlobalStyle fontFamily={inter.style.fontFamily} />
+        <Component {...pageProps} />
+      </LogoProvider>
+    </ThemeProvider >
   )
 }

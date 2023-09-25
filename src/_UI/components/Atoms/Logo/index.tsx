@@ -12,17 +12,20 @@ const Logo = () => {
   }, [showLogo]);
   return (
     <Link href='/'>
-      <S.LogoContainer $showtext={showText} onMouseEnter={() => setShowText(true)} onMouseLeave={() => setShowText(false)}>
+      <S.LogoContainer data-testid="logo-container"
+        $showtext={showText}
+        onMouseEnter={() => setShowText(true)}
+        onMouseLeave={() => setShowText(false)}
+      >
         <div>
           <Image
             src="/images/white-pokeball.svg"
             alt="Pokebola"
             width={34}
             height={34}
-            priority
           />
         </div>
-        <S.LogoText $showtext={showText}>Centro Pokémon </S.LogoText>
+        <S.LogoText data-testid='logo-text' $showtext={showText}>Centro Pokémon </S.LogoText>
       </S.LogoContainer>
     </Link>
   )

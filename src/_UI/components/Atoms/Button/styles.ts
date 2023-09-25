@@ -35,8 +35,13 @@ const stylePatternProps = {
 }
 
 
-export const Button = styled.button<IButtonProps>`
-  ${({$stylePattern}) => $stylePattern === 'primary' && stylePatternProps.primary}
-  ${({$stylePattern}) => $stylePattern === 'secondary' && stylePatternProps.secondary}
+export const ButtonStyled = styled.button<IButtonProps>`
+  ${({stylepattern}) => stylepattern === 'primary' && stylePatternProps.primary}
+  ${({stylepattern}) => stylepattern === 'secondary' && stylePatternProps.secondary}
   ${({fullwidth}) => fullwidth ? `width:100%`: 'width: fit-content;'}
+
+  &::disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `

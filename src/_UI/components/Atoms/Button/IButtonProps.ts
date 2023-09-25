@@ -1,5 +1,5 @@
 export interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode
-  $stylePattern: 'primary' | 'secondary'
+  children?: React.ReactNode
+  stylepattern?: 'primary' | 'secondary'
   fullwidth?: boolean
 }

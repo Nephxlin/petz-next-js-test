@@ -1,23 +1,29 @@
+import { nanoid } from 'nanoid';
 import * as S from './styles'
+import React from 'react';
 
-interface ICustomInputProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+export interface ICustomSelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   label?: string;
   error?: string;
-  options?: Array<{ value: string, label: string }>;
-  row?: boolean;
+  direction?: 'row' | 'column'
+  children?: React.ReactNode;
+  loading?: boolean;
 }
 
-const Select = (props: ICustomInputProps) => {
+const Select = (props: ICustomSelectProps) => {
   return (
-    <S.SelectWrapper row={props.row}>
-      {props.label && <S.Label row={props.row}>{props.label}</S.Label>}
-      <S.SelectStyled row={props.row} {...props}>
-        <option value="" disabled selected hidden>Selecione uma opção</option>
-        {props?.options?.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+    <S.SelectWrapper
+      data-testid='select-wrapper'
+      direction={props.direction}
+      placeholder='Selecione uma opção'>
+      {props.label && <S.Label direction={props.direction}>{props.label}</S.Label>}
+      <S.SelectStyled direction={props.direction} {...props}>
+        <option value="0" hidden>Selecione uma opção</option>
+        {props.children}
       </S.SelectStyled>
       {props.error && <S.Error>{props.error}</S.Error>}
     </S.SelectWrapper>
   )
 }
 
-export default Select;
+export default React.memo(Select);

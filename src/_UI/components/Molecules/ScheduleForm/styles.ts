@@ -10,7 +10,9 @@ export const Hr = styled.hr`
   margin: 32px 0;
 `
 
-export const FormTitle = styled.h1`
+export const FormTitle = styled.h2`
+  display: flex;
+  justify-content: center;
   font-size: 24px;
   text-align: center;
   margin-bottom: 32px;
@@ -63,6 +65,13 @@ export const FormRow = styled.div`
   width: 100%;
   gap: 18px;
   margin-bottom: 16px;
+`
+
+export const ScheduleTimeFormRow = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  gap: 18px;
 `
 
 export const SubmitFormRow = styled.div`
