@@ -1,7 +1,8 @@
 import axios, { AxiosResponse  } from 'axios';
 
-type ILocalUrls = '/scheduling/date' | '/scheduling/time' | '/'
-type IPokeDexUrls = '/pokemon' | '/region' | '/location'
+type ILocalUrls = '/scheduling/date' | '/scheduling/time' | '/scheduling/form' |'/'
+type IPokeDexUrls = '/pokemon' | `/region` | `/location` | '/pokemon-habitat'
+
 type IBaseService = 'local' | 'pokeDex'
 
 type HttpMethods = 'GET' | 'POST' | 'PUT' | 'DELETE';
@@ -22,7 +23,8 @@ function getBaseUrl(baseService: IBaseService) {
 
 export type IMakeCall<T extends IBaseService> = {
   baseService: T;
-  url: IServiceUrlsMap[T];
+  url: IServiceUrlsMap[T]
+  extendPath?: string
   method: HttpMethods 
   data?: any
 };
@@ -33,9 +35,10 @@ async function makeHttpCall<T extends IBaseService>({
   url,
   method,
   data,
+  extendPath
 }: IMakeCall<T>): Promise<AxiosResponse> {
   const baseUrl = getBaseUrl(baseService)
-  const fullUrl = `${baseUrl}${url}`;
+  const fullUrl = `${baseUrl}${url}${extendPath ? `/${extendPath}`: ''}`;
 
   try {
     const response = await axios.request({

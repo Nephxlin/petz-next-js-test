@@ -6,6 +6,10 @@ const Breadcrumbs = () => {
   const router = useRouter();
   const pathSegments = router.asPath.split('/').filter((segment) => segment !== '');
 
+  const lastSegment = pathSegments[pathSegments.length - 1];
+  const lastSegmentWithoutQuery = lastSegment.split('?')[0];
+  pathSegments[pathSegments.length - 1] = lastSegmentWithoutQuery;
+
   const breadcrumbs = pathSegments.map((segment, index) => {
     const cleanedSegment = segment.replace(/-/g, ' ');
     const label = cleanedSegment.charAt(0).toUpperCase() + cleanedSegment.slice(1);
@@ -20,11 +24,13 @@ const Breadcrumbs = () => {
           Home
         </S.CrumbHome>
       </Link>
-      {breadcrumbs.map((breadcrumb, index) => (
-        <S.CrumbLink data-testid="breadcrumbs-items" key={index}>
-          {breadcrumb.label}
-        </S.CrumbLink>
-      ))}
+      {breadcrumbs.map((breadcrumb, index) => {
+        return (
+          <S.CrumbLink data-testid="breadcrumbs-items" key={index}>
+            {breadcrumb.label}
+          </S.CrumbLink>
+        )
+      })}
     </S.BreadCrumbsList>
   );
 };

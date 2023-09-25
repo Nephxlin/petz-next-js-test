@@ -7,7 +7,7 @@ export const scheduleSchema = z.object({
   city: z.string(),
   date: z.string(),
   time: z.string(),
-  pokemons: z.array(z.string()).optional(),
+  pokemons: z.array(z.string()),
 });
 
 export type User = z.infer<typeof scheduleSchema>;
